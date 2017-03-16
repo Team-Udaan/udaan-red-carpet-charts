@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'avengers';
+    src: url(AVENGEANCE.otf);
+}
+
+body {
+    background: url("red-carpet-back.jpg") center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    margin: 0;
+}
+
+.title {
+    text-align: center;
+    font-family: 'avengers';
+}
+
+.row {
+    height: 80vh;
+    margin: 0 auto;
+}
+
+.col {
+    margin: auto;
+    height: 50%;
+    width: 20%
+}
+
+.c3-chart-arcs-title {
+    font-family: avengers;
+    font-size: 1rem;
+    fill: #1F77B4;
+}

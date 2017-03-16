@@ -1,0 +1,23 @@
+{
+  "name": "udaan-red-carpet-charts",
+  "version": "1.0.0",
+  "description": "charts for red carpet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Team-Udaan/udaan-red-carpet-charts.git"
+  },
+  "author": "team-udaan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Team-Udaan/udaan-red-carpet-charts/issues"
+  },
+  "homepage": "https://github.com/Team-Udaan/udaan-red-carpet-charts#readme",
+  "dependencies": {
+    "c3": "^0.4.11",
+    "flexboxgrid": "^6.3.1"
+  }
+}
