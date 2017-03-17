@@ -4,9 +4,6 @@
 }
 
 body {
-    background: url("red-carpet-back.jpg") center center;
-    -webkit-background-size: cover;
-    background-size: cover;
     margin: 0;
 }
 
@@ -16,18 +13,18 @@ body {
 }
 
 .row {
-    height: 80vh;
+    height: 40vh;
     margin: 0 auto;
 }
 
 .col {
     margin: auto;
-    height: 50%;
+    height: 100%;
     width: 20%
 }
 
 .c3-chart-arcs-title {
-    font-family: avengers;
-    font-size: 1rem;
+    font-family: 'avengers';
+    font-size: 1.2rem;
     fill: #1F77B4;
 }

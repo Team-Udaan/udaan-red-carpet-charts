@@ -2,12 +2,7 @@ var risingstar = c3.generate({
     bindto: '#rising-star',
     data: {
         type: 'donut',
-        columns: [
-            ['data1', 300],
-            ['data2', 530],
-            ['data3', 500],
-            ['data4', 600]
-        ]
+        rows: []
     },
     donut: {
         title: 'Rising Star',
@@ -15,18 +10,17 @@ var risingstar = c3.generate({
         label: {
             show: false
         }
+    },
+    tooltip: {
+        show: false
     }
-}).legend.hide();
+});
+risingstar.legend.hide();
 var sportsicon = c3.generate({
     bindto: '#sports-icon',
     data: {
         type: 'donut',
-        columns: [
-            ['data1', 300],
-            ['data2', 530],
-            ['data3', 500],
-            ['data4', 600]
-        ]
+        rows: []
     },
     donut: {
         title: 'Sports Icon',
@@ -34,18 +28,17 @@ var sportsicon = c3.generate({
         label: {
             show: false
         }
+    },
+    tooltip: {
+        show: false
     }
-}).legend.hide();
+});
+sportsicon.legend.hide();
 var facem = c3.generate({
     bindto: '#face-of-the-year-m',
     data: {
         type: 'donut',
-        columns: [
-            ['data1', 300],
-            ['data2', 530],
-            ['data3', 500],
-            ['data4', 600]
-        ]
+        rows: []
     },
     donut: {
         title: 'Face Of The Year-Male',
@@ -53,18 +46,17 @@ var facem = c3.generate({
         label: {
             show: false
         }
+    },
+    tooltip: {
+        show: false
     }
-}).legend.hide();
+});
+facem.legend.hide();
 var facef = c3.generate({
     bindto: '#face-of-the-year-f',
     data: {
         type: 'donut',
-        columns: [
-            ['data1', 300],
-            ['data2', 530],
-            ['data3', 500],
-            ['data4', 600]
-        ]
+        rows: []
     },
     donut: {
         title: 'Face Of The Year-Female',
@@ -72,18 +64,17 @@ var facef = c3.generate({
         label: {
             show: false
         }
+    },
+    tooltip: {
+        show: false
     }
-}).legend.hide();
+});
+facef.legend.hide();
 var stylem = c3.generate({
     bindto: '#style-icon-m',
     data: {
         type: 'donut',
-        columns: [
-            ['data1', 300],
-            ['data2', 530],
-            ['data3', 500],
-            ['data4', 600]
-        ]
+        rows: []
     },
     donut: {
         title: 'Style Icon-Male',
@@ -91,18 +82,17 @@ var stylem = c3.generate({
         label: {
             show: false
         }
+    },
+    tooltip: {
+        show: false
     }
-}).legend.hide();
+});
+stylem.legend.hide();
 var stylef = c3.generate({
     bindto: '#style-icon-f',
     data: {
         type: 'donut',
-        columns: [
-            ['data1', 300],
-            ['data2', 530],
-            ['data3', 500],
-            ['data4', 600]
-        ]
+        rows: []
     },
     donut: {
         title: 'Style Icon-Female',
@@ -110,18 +100,17 @@ var stylef = c3.generate({
         label: {
             show: false
         }
+    },
+    tooltip: {
+        show: false
     }
-}).legend.hide();
+});
+stylef.legend.hide();
 var artistm = c3.generate({
     bindto: '#artist-of-the-year-m',
     data: {
         type: 'donut',
-        columns: [
-            ['data1', 300],
-            ['data2', 530],
-            ['data3', 500],
-            ['data4', 600]
-        ]
+        rows: []
     },
     donut: {
         title: 'Artist Of The Year-Male',
@@ -129,18 +118,17 @@ var artistm = c3.generate({
         label: {
             show: false
         }
+    },
+    tooltip: {
+        show: false
     }
-}).legend.hide();
+});
+artistm.legend.hide();
 var artistf = c3.generate({
     bindto: '#artist-of-the-year-f',
     data: {
         type: 'donut',
-        columns: [
-            ['data1', 300],
-            ['data2', 530],
-            ['data3', 500],
-            ['data4', 600]
-        ]
+        rows: []
     },
     donut: {
         title: 'Artist Of The Year-Female',
@@ -148,18 +136,17 @@ var artistf = c3.generate({
         label: {
             show: false
         }
+    },
+    tooltip: {
+        show: false
     }
-}).legend.hide();
+});
+artistf.legend.hide();
 var personam = c3.generate({
     bindto: '#persona-m',
     data: {
         type: 'donut',
-        columns: [
-            ['data1', 300],
-            ['data2', 530],
-            ['data3', 500],
-            ['data4', 600]
-        ]
+        rows: []
     },
     donut: {
         title: 'Mr.Persona',
@@ -167,18 +154,17 @@ var personam = c3.generate({
         label: {
             show: false
         }
+    },
+    tooltip: {
+        show: false
     }
-}).legend.hide();
+});
+personam.legend.hide();
 var personaf = c3.generate({
     bindto: '#persona-f',
     data: {
         type: 'donut',
-        columns: [
-            ['data1', 300],
-            ['data2', 530],
-            ['data3', 500],
-            ['data4', 600]
-        ]
+        rows: []
     },
     donut: {
         title: 'Miss.Persona',
@@ -186,5 +172,9 @@ var personaf = c3.generate({
         label: {
             show: false
         }
+    },
+    tooltip: {
+        show: false
     }
-}).legend.hide();
+});
+personaf.legend.hide();
