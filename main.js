@@ -1,180 +1,136 @@
-var risingstar = c3.generate({
-    bindto: '#rising-star',
-    data: {
-        type: 'donut',
-        rows: []
-    },
-    donut: {
-        title: 'Rising Star',
-        width: 20,
-        label: {
-            show: false
+var socket = io(config.serverkey);
+var votes = {};
+var charts = [];
+var events = [];
+function graphDataGenerator(obj) {
+    var values = [];
+    for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            values.push(obj[key]);
         }
-    },
-    tooltip: {
-        show: false
     }
+    var keys = values.map(function (value, index) {
+        return 'data' + index;
+    });
+    values = values.sort(function (a, b) {
+        return b - a;
+    });
+    return [keys, values];
+}
+
+function loadNewGraph() {
+    charts.forEach(function (chart) {
+        chart.chartInstance.load({rows: graphDataGenerator(chart.data)});
+    });
+}
+
+socket.on('connect', function () {
+
 });
-risingstar.legend.hide();
-var sportsicon = c3.generate({
-    bindto: '#sports-icon',
-    data: {
-        type: 'donut',
-        rows: []
-    },
-    donut: {
-        title: 'Sports Icon',
-        width: 20,
-        label: {
-            show: false
+
+socket.on('votes', function (data) {
+    votes = data;
+    events = [
+        {
+            name: 'risingStar',
+            title: 'Rising Star',
+            data: votes.risingStar,
+            colors: {
+                data0: 'red',
+                data1: 'green',
+                data2: 'blue',
+                data3: 'yellow'
+            }
+        },
+        {
+            name: 'sportsIcon',
+            title: 'Sports Icon',
+            data: votes.sportsIcon
+        },
+        {
+            name: 'faceOfTheYearMale',
+            title: 'Face of the Year - Male',
+            data: votes.face.male
+        },
+        {
+            name: 'faceOfTheYearFemale',
+            title: 'Face of the Year - Female',
+            data: votes.face.female
+        },
+        {
+            name: 'styleIconMale',
+            title: 'Style Icon - Male',
+            data: votes.styleIcon.male
+        },
+        {
+            name: 'styleIconFemale',
+            title: 'Style Icon - Female',
+            data: votes.styleIcon.female
+        },
+        {
+            name: 'artistOfTheYearMale',
+            title: 'Artist of the Year - Male',
+            data: votes.artist.male
+        },
+        {
+            name: 'artistOfTheYearFemale',
+            title: 'Artist of the Year - Female',
+            data: votes.artist.female
+        },
+        {
+            name: 'personaMale',
+            title: 'Persona - Male',
+            data: votes.persona.male
+        },
+        {
+            name: 'personaFemale',
+            title: 'Persona - Female',
+            data: votes.persona.female
         }
-    },
-    tooltip: {
-        show: false
-    }
-});
-sportsicon.legend.hide();
-var facem = c3.generate({
-    bindto: '#face-of-the-year-m',
-    data: {
-        type: 'donut',
-        rows: []
-    },
-    donut: {
-        title: 'Face Of The Year-Male',
-        width: 20,
-        label: {
-            show: false
+    ];
+
+    charts = events.map(function (event) {
+        return {
+            name: event.name,
+            data: event.data,
+            chartInstance: c3.generate({
+                bindto: '#' + event.name,
+                data: {
+                    type: 'donut',
+                    rows: graphDataGenerator(event.data),
+                    colors: event.colors
+                },
+                donut: {
+                    title: event.title,
+                    width: 20,
+                    label: {
+                        show: false
+                    }
+                },
+                tooltip: {
+                    show: false
+                },
+                legend: {
+                    hide: true
+                }
+            })
         }
-    },
-    tooltip: {
-        show: false
-    }
+    });
 });
-facem.legend.hide();
-var facef = c3.generate({
-    bindto: '#face-of-the-year-f',
-    data: {
-        type: 'donut',
-        rows: []
-    },
-    donut: {
-        title: 'Face Of The Year-Female',
-        width: 20,
-        label: {
-            show: false
+
+socket.on('vote', function (data) {
+    for (var i in data) {
+        if (data.hasOwnProperty(i)) {
+            if (typeof data[i] == 'string') {
+                votes[i][data[i]] = (votes[i][data[i]] || 0) + 1;
+            } else {
+                votes[i].male[data[i].male] = (votes[i].male[data[i].male] || 0) + 1;
+                votes[i].female[data[i].female] = (votes[i].female[data[i].female] || 0) + 1;
+            }
         }
-    },
-    tooltip: {
-        show: false
     }
+    loadNewGraph();
 });
-facef.legend.hide();
-var stylem = c3.generate({
-    bindto: '#style-icon-m',
-    data: {
-        type: 'donut',
-        rows: []
-    },
-    donut: {
-        title: 'Style Icon-Male',
-        width: 20,
-        label: {
-            show: false
-        }
-    },
-    tooltip: {
-        show: false
-    }
+
+socket.on('disconnect', function () {
 });
-stylem.legend.hide();
-var stylef = c3.generate({
-    bindto: '#style-icon-f',
-    data: {
-        type: 'donut',
-        rows: []
-    },
-    donut: {
-        title: 'Style Icon-Female',
-        width: 20,
-        label: {
-            show: false
-        }
-    },
-    tooltip: {
-        show: false
-    }
-});
-stylef.legend.hide();
-var artistm = c3.generate({
-    bindto: '#artist-of-the-year-m',
-    data: {
-        type: 'donut',
-        rows: []
-    },
-    donut: {
-        title: 'Artist Of The Year-Male',
-        width: 20,
-        label: {
-            show: false
-        }
-    },
-    tooltip: {
-        show: false
-    }
-});
-artistm.legend.hide();
-var artistf = c3.generate({
-    bindto: '#artist-of-the-year-f',
-    data: {
-        type: 'donut',
-        rows: []
-    },
-    donut: {
-        title: 'Artist Of The Year-Female',
-        width: 20,
-        label: {
-            show: false
-        }
-    },
-    tooltip: {
-        show: false
-    }
-});
-artistf.legend.hide();
-var personam = c3.generate({
-    bindto: '#persona-m',
-    data: {
-        type: 'donut',
-        rows: []
-    },
-    donut: {
-        title: 'Mr.Persona',
-        width: 20,
-        label: {
-            show: false
-        }
-    },
-    tooltip: {
-        show: false
-    }
-});
-personam.legend.hide();
-var personaf = c3.generate({
-    bindto: '#persona-f',
-    data: {
-        type: 'donut',
-        rows: []
-    },
-    donut: {
-        title: 'Miss.Persona',
-        width: 20,
-        label: {
-            show: false
-        }
-    },
-    tooltip: {
-        show: false
-    }
-});
-personaf.legend.hide();
