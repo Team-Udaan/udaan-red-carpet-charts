@@ -34,13 +34,7 @@ socket.on('votes', function (data) {
         {
             name: 'risingStar',
             title: 'Rising Star',
-            data: votes.risingStar,
-            colors: {
-                data0: 'red',
-                data1: 'green',
-                data2: 'blue',
-                data3: 'yellow'
-            }
+            data: votes.risingStar
         },
         {
             name: 'sportsIcon',
@@ -102,7 +96,7 @@ socket.on('votes', function (data) {
                 },
                 donut: {
                     title: event.title,
-                    width: 20,
+                    width: 25,
                     label: {
                         show: false
                     }
