@@ -4,33 +4,66 @@
 }
 
 body {
-    padding-top: 20px;
+    background-color: #444;
     margin: 0;
 }
-
-.title {
-    height: 10vh;
+.title{
+    position: absolute;
+    width: 100vw;
+}
+.title img{
+    position: relative;
+    top:-7vh;
+    display: block;
+    margin: 0 auto;
+    height: 35vw;
     text-align: center;
-    font-family: 'avengers';
+}
+.title-name{
+    position: relative;
+    top:-10vh;
+    text-align: center;
+    font-family: avengers;
+    font-size: 4rem;
+    color: white;
 }
 
 .row {
-    height: 40vh;
+    height: 33vh;
+    margin: 0 auto;
+}
+
+.row2 {
+    width: 100vw;
+    height: 33vh;
     margin: 0 auto;
 }
 
 .c3-event-rect .c3-event-rect-0 {
-    height: 40vh;
+    /*height: 40vh;*/
 }
 
-.col {
-    margin: auto;
-    height: 45vh;
-    width: 20%
+.row .col {
+    display: inline-block;
+    height: 33vh;
+    width: 24%
+}
+
+.row2 .col {
+    height: 33vh;
+    width: 24%
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
 }
 
 .c3-chart-arcs-title {
     font-family: 'avengers';
     font-size: 1rem;
-    fill: #1F77B4;
+    fill: #fff;
 }
