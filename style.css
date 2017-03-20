@@ -2,9 +2,11 @@
     font-family: 'avengers';
     src: url(AVENGEANCE.otf);
 }
-
+@font-face {
+    font-family: 'captain';
+    src: url(AmericanCaptain.ttf);
+}
 body {
-    background-color: #444;
     margin: 0;
 }
 .title{
@@ -16,7 +18,7 @@ body {
     top:-7vh;
     display: block;
     margin: 0 auto;
-    height: 35vw;
+    height: 25vw;
     text-align: center;
 }
 .title-name{
@@ -25,7 +27,6 @@ body {
     text-align: center;
     font-family: avengers;
     font-size: 4rem;
-    color: white;
 }
 
 .row {
@@ -63,10 +64,9 @@ body {
 }
 
 .c3-chart-arcs-title {
-    font-family: 'avengers';
-    font-size: 1rem;
-    fill: #fff;
+    font-family: 'captain';
+    font-size: 1.2rem;
 }
-.c3-legend-item-event{
+.c3-legend-item{
     display: none;
 }
