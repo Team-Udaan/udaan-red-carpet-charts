@@ -29,6 +29,14 @@ body {
     font-family: avengers;
     font-size: 4rem;
 }
+.title-link{
+    font-weight: bolder;
+    position: relative;
+    top:-10vh;
+    text-align: center;
+    /*font-family: avengers;*/
+    font-size: 1rem;
+}
 
 .row {
     height: 33vh;
