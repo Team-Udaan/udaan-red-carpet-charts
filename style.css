@@ -22,6 +22,7 @@ body {
     text-align: center;
 }
 .title-name{
+    font-weight: bolder;
     position: relative;
     top:-10vh;
     text-align: center;
