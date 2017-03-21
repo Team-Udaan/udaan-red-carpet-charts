@@ -22,6 +22,13 @@ function loadNewGraph() {
     charts.forEach(function (chart) {
         chart.chartInstance.load({rows: graphDataGenerator(chart.data)});
     });
+    var count = 0;
+    for(var key in votes.risingStar) {
+        if(votes.risingStar.hasOwnProperty(key)) {
+            count += +votes.risingStar[key];
+        }
+    }
+    document.getElementById('vote-count').innerHTML = count.toString();
 }
 
 socket.on('connect', function () {
@@ -110,6 +117,9 @@ socket.on('votes', function (data) {
             })
         }
     });
+
+    loadNewGraph();
+
 });
 
 socket.on('vote', function (data) {
